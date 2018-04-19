@@ -20,7 +20,6 @@
 	  } );
     </script>
 	
-	
 </head>
 
 <body>
@@ -67,7 +66,45 @@
 
 	</fieldset>
 	</form>
+	<br /><br />
+	<div class="form-group">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-5">
+				<div id="datetimepicker12"></div>
+			</div>
+		</div>
+	</div>
 	
-	
+	<script type="text/javascript">
+		var today = new Date();
+       
+		
+		$('#btnGenerate').click(function(){
+			if(!$('#datetimepicker1').datepicker('getDate')){
+				alert('Please fill the start date');
+				return;
+			}
+			if(!$('#numberDays').val()){
+				alert('Please fill the number of days');
+				return;
+			}
+			
+			var daysToAdd = parseInt($('#numberDays').val());
+			if(isNaN(daysToAdd)){
+				alert('Please provide a valid number for number of days');
+				return;
+			}
+			
+			var fechaIni = $('#datetimepicker1').datepicker('getDate');
+			var fechaFin = new Date(fechaIni);
+			fechaFin.setDate(fechaFin.getDate() + daysToAdd);
+			$('#datetimepicker12').datepicker({
+                inline: true,
+				startDate: fechaIni,
+				endDate: fechaFin
+            });
+
+		});
+    </script>
 </body>
 </html>
