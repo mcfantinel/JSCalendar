@@ -20,6 +20,23 @@
 	  } );
     </script>
 	
+	<style media="screen" type="text/css">	
+	.day.grey {
+		background-color: grey !important;
+	}
+	
+	.day.green {
+		background-color: green !important;
+	}
+	
+	.day.yellow {
+		background-color: yellow !important;
+	}
+	
+	.day.orange {
+		background-color: orange !important;
+	}
+	</style>
 </head>
 
 <body>
@@ -77,6 +94,18 @@
 	
 	<script type="text/javascript">
 		var today = new Date();
+		var holiday = ["1-1-2018", "1-15-2018","2-19-2018", "5-28-2018","7-4-2018", "9-3-2018","10-8-2018", "11-12-2018","11-22-2018", "12-25-2018"];
+		$(document).ready(function(){
+		
+		});
+		
+		function formatDate(date) {
+			var day = date.getDate();
+			var month = date.getMonth()+1;
+			var year = date.getFullYear();
+
+			return month + '-' + day + '-' + year;
+		}
        
 		
 		$('#btnGenerate').click(function(){
@@ -101,7 +130,18 @@
 			$('#datetimepicker12').datepicker({
                 inline: true,
 				startDate: fechaIni,
-				endDate: fechaFin
+				endDate: fechaFin,
+				beforeShowDay: function (date) {
+					var datestring = formatDate(date);
+					if (date < fechaIni || date > fechaFin)
+						return "grey";
+					else if (holiday.indexOf(datestring) != -1)
+                        return "orange";
+					else if (date.getDay() == 0 || date.getDay() == 6)
+						return "yellow";
+					else 
+						return "green";
+				}
             });
 
 		});
