@@ -1,0 +1,73 @@
+<!-- Latest compiled and minified CSS -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Dev Test</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+	
+	
+	<script>
+	  $( function() {
+		$( "#datetimepicker1" ).datepicker({ minDate: 0 });
+	  } );
+    </script>
+	
+	
+</head>
+
+<body>
+	<form id="devForm" class="form-horizontal">
+	<fieldset>
+
+	<!-- Form Name -->
+	<legend>Exercise UI Developer</legend>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="textinput">Start Date</label>  
+	  <div class="col-md-4">
+		<div class="input-group date" id="datetimepicker1">
+			<input type='text' name="fechaIni" class="form-control" placeholder="MM/DD/YYYY" />
+			<span class="input-group-addon">
+				<span class="glyphicon glyphicon-calendar"></span>
+			</span>
+		</div>
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="textinput">Number of Days</label>  
+	  <div class="col-md-4 teste">
+		<input id="numberDays" name="numberDays" class="form-control input-md" type="text" > 
+	  </div>
+	</div>
+
+	<!-- Text input-->
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="textinput">Country Code</label>  
+	  <div class="col-md-4">
+		<input id="textinput" name="textinput" class="form-control input-md" type="text"> 
+	  </div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-2 col-md-offset-5">
+			<button type="button" class="btn btn-success" id="btnGenerate">Generate Calendar</button>
+		</div>
+	</div>
+
+	</fieldset>
+	</form>
+	
+	
+</body>
+</html>
